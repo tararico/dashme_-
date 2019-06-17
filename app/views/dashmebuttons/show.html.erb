@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dashmebutton.name %>
+</p>
+
+<p>
+  <strong>Shop:</strong>
+  <%= @dashmebutton.shop %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <% if @dashmebutton.image.attached? %>
+  <%= image_tag @dashmebutton.image.variant(resize: "250x250") %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_dashmebutton_path(@dashmebutton) %> |
+<%= link_to 'Back', dashmebuttons_path %>
