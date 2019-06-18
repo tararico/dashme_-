@@ -1,0 +1,20 @@
+= form_with(model: dashmebutton, local: true) do |form|
+  - if dashmebutton.errors.any?
+    #error_explanation
+      h2
+        = pluralize(dashmebutton.errors.count, "error")
+        | prohibited this dashmebutton from being saved:
+      ul
+        - dashmebutton.errors.full_messages.each do |message|
+          li= message
+  .field
+    = form.label :name
+    = form.text_field :name
+  .field
+    = form.label :shop
+    = form.text_field :shop
+  .field
+    = form.label :image
+    = form.file_field :image
+  .actions
+    = form.submit

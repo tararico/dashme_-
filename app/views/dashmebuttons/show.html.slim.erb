@@ -1,0 +1,14 @@
+p#notice= notice
+p
+  strong Name:
+  = @dashmebutton.name
+p
+  strong Shop:
+  = @dashmebutton.shop
+p
+  strong Image:
+  - if @dashmebutton.image.attached?
+    = image_tag @dashmebutton.image.variant(resize: "250x250")
+= link_to 'Edit', edit_dashmebutton_path(@dashmebutton)
+| \
+= link_to 'Back', dashmebuttons_path
